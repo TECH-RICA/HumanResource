@@ -1,0 +1,13 @@
+.card {
+  background: white; border-radius: var(--radius-lg); border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-xs); transition: all var(--transition-base); overflow: hidden;
+}
+.card:hover { box-shadow: var(--shadow-sm); }
+.card-clickable:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); cursor: pointer; }
+.card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-5) var(--space-5) 0;
+}
+.card-header h4 { font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); }
+.card-body { padding: var(--space-5); }
+.card-footer { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--border-color-light); }

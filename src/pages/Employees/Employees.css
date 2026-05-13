@@ -1,0 +1,35 @@
+.emp-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-5); flex-wrap: wrap; }
+.emp-filters { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; flex: 1; }
+.emp-search { width: 280px; }
+.emp-filter-select { padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: var(--font-size-sm); color: var(--text-secondary); background: white; outline: none; cursor: pointer; }
+.emp-filter-select:focus { border-color: var(--color-primary-500); }
+.emp-row-info { display: flex; align-items: center; gap: var(--space-3); }
+.emp-row-name { font-weight: var(--font-weight-medium); color: var(--text-primary); }
+.emp-row-email { font-size: var(--font-size-xs); color: var(--text-tertiary); }
+.emp-actions { display: flex; gap: var(--space-1); }
+
+/* Employee profile */
+.emp-profile-header {
+  background: white; border-radius: var(--radius-xl); border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-xs); padding: var(--space-8); margin-bottom: var(--space-6);
+  display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap;
+}
+.emp-profile-info { flex: 1; min-width: 200px; }
+.emp-profile-name { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); margin-bottom: var(--space-1); }
+.emp-profile-position { font-size: var(--font-size-base); color: var(--text-secondary); margin-bottom: var(--space-3); }
+.emp-profile-meta { display: flex; gap: var(--space-6); flex-wrap: wrap; }
+.emp-profile-meta-item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-secondary); }
+.emp-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+.emp-detail-item { }
+.emp-detail-label { font-size: var(--font-size-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.emp-detail-value { font-size: var(--font-size-base); color: var(--text-primary); font-weight: var(--font-weight-medium); }
+.emp-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+
+@media (max-width: 768px) {
+  .emp-search { width: 100%; }
+  .emp-toolbar { flex-direction: column; align-items: stretch; }
+  .emp-profile-header { flex-direction: column; text-align: center; }
+  .emp-profile-meta { justify-content: center; }
+  .emp-detail-grid { grid-template-columns: 1fr; }
+  .emp-form-grid { grid-template-columns: 1fr; }
+}

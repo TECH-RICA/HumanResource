@@ -1,0 +1,61 @@
+export const PLANS = {
+  STARTER: 'starter',
+  PROFESSIONAL: 'professional',
+  ENTERPRISE: 'enterprise',
+};
+
+export const PLAN_DETAILS = {
+  [PLANS.STARTER]: {
+    name: 'Starter',
+    price: 8,
+    period: 'per employee/month',
+    description: 'Perfect for small teams getting started',
+    features: [
+      'Up to 25 employees',
+      'Employee management',
+      'Leave management',
+      'Basic attendance',
+      'Department management',
+      'Email support',
+    ],
+    maxEmployees: 25,
+    highlighted: false,
+  },
+  [PLANS.PROFESSIONAL]: {
+    name: 'Professional',
+    price: 15,
+    period: 'per employee/month',
+    description: 'Best for growing companies',
+    features: [
+      'Up to 200 employees',
+      'Everything in Starter',
+      'Payroll management',
+      'Recruitment pipeline',
+      'Performance reviews',
+      'Document management',
+      'Reports & analytics',
+      'Priority support',
+    ],
+    maxEmployees: 200,
+    highlighted: true,
+  },
+  [PLANS.ENTERPRISE]: {
+    name: 'Enterprise',
+    price: 25,
+    period: 'per employee/month',
+    description: 'For large organizations',
+    features: [
+      'Unlimited employees',
+      'Everything in Professional',
+      'Custom branding',
+      'API access',
+      'Advanced analytics',
+      'SSO integration',
+      'Dedicated account manager',
+      '24/7 phone support',
+      'Custom integrations',
+    ],
+    maxEmployees: Infinity,
+    highlighted: false,
+  },
+};

@@ -1,0 +1,6 @@
+.breadcrumbs { display: flex; align-items: center; gap: var(--space-1); font-size: var(--font-size-sm); margin-bottom: var(--space-4); flex-wrap: wrap; }
+.breadcrumb-item { color: var(--text-tertiary); }
+.breadcrumb-item a { color: var(--text-secondary); transition: color var(--transition-fast); }
+.breadcrumb-item a:hover { color: var(--color-primary-600); }
+.breadcrumb-sep { color: var(--text-tertiary); margin: 0 2px; }
+.breadcrumb-current { color: var(--text-primary); font-weight: var(--font-weight-medium); }
