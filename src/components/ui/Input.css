@@ -23,3 +23,27 @@
 .input-error-message { font-size: var(--font-size-xs); color: var(--color-danger-500); margin-top: 2px; }
 .input-hint { font-size: var(--font-size-xs); color: var(--text-tertiary); }
 textarea.input-field { min-height: 80px; resize: vertical; }
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+}
+
+.password-toggle:hover {
+  color: #4f46e5;
+}
+
+.has-password-toggle {
+  padding-right: 45px;
+}
+
+.input-wrapper {
+  position: relative;
+}
