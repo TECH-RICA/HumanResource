@@ -8,6 +8,7 @@ import Badge from '../../components/ui/Badge';
 import Card from '../../components/ui/Card';
 import Tabs from '../../components/ui/Tabs';
 import Button from '../../components/ui/Button';
+import './Payroll.css';
 
 export default function Payroll() {
   const columns = [
@@ -48,21 +49,21 @@ export default function Payroll() {
   ];
 
   return (
-    <div className="page-container">
+    <div className="page-container payroll-container">
       <div className="page-header">
         <div><h1>Payroll</h1><p className="page-header-subtitle">Manage employee compensation and payslips</p></div>
-        <div className="page-actions">
-          <Button variant="secondary" icon={HiOutlineDocumentText}>Export</Button>
-          <Button icon={HiOutlineCheck}>Process Payroll</Button>
+        <div className="payroll-actions">
+          <Button variant="secondary" icon={HiOutlineDocumentText} className="payroll-action-btn">Export</Button>
+          <Button icon={HiOutlineCheck} className="payroll-action-btn">Process Payroll</Button>
         </div>
       </div>
-      <div className="grid-4 mb-6">
+      <div className="payroll-stats-grid mb-6">
         <StatCard label="Total Payroll" value={formatCurrency(payrollSummary.totalPayroll)} icon={HiOutlineCurrencyDollar} color="#3b82f6" />
         <StatCard label="Total Bonuses" value={formatCurrency(payrollSummary.totalBonuses)} icon={HiOutlineCurrencyDollar} color="#22c55e" />
         <StatCard label="Processed" value={payrollSummary.processedCount} icon={HiOutlineCheck} color="#22c55e" />
         <StatCard label="Pending" value={payrollSummary.pendingCount} icon={HiOutlineClock} color="#f59e0b" />
       </div>
-      <Tabs tabs={tabs} />
+      <Tabs tabs={tabs} className="payroll-tabs" />
     </div>
   );
 }

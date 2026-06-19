@@ -9,6 +9,7 @@ import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import Tabs from '../../components/ui/Tabs';
+import './Recruitment.css';
 
 const stageColors = { applied: 'gray', screening: 'info', interview: 'warning', offer: 'info', hired: 'success', rejected: 'danger' };
 
@@ -45,18 +46,20 @@ export default function Recruitment() {
           {['applied', 'screening', 'interview', 'offer', 'hired'].map((stage) => {
             const stageApps = applicants.filter((a) => a.stage === stage);
             return (
-              <div key={stage}>
-                <div style={{ marginBottom: 'var(--space-3)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <Badge variant={stageColors[stage]}>{RECRUITMENT_STAGE_LABELS[stage]}</Badge>
-                  <span style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-tertiary)' }}>{stageApps.length}</span>
+              <div key={stage} className="recruitment-pipeline-stage">
+                <div className="recruitment-stage-header">
+                  <Badge variant={stageColors[stage]} className="recruitment-stage-title">{RECRUITMENT_STAGE_LABELS[stage]}</Badge>
+                  <span className="recruitment-stage-count">{stageApps.length}</span>
                 </div>
-                {stageApps.map((a) => (
-                  <Card key={a.id} className="mb-2">
-                    <div style={{ fontSize: 'var(--font-size-sm)', fontWeight: 500 }}>{a.name}</div>
-                    <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-tertiary)', marginTop: 2 }}>{a.jobTitle}</div>
-                    {a.rating > 0 && <div style={{ fontSize: 'var(--font-size-xs)', marginTop: 4 }}>⭐ {a.rating}</div>}
-                  </Card>
-                ))}
+                <div style={{ flex: 1, overflowY: 'auto' }}>
+                  {stageApps.map((a) => (
+                    <div key={a.id} className="recruitment-candidate-card">
+                      <div className="recruitment-candidate-name">{a.name}</div>
+                      <div className="recruitment-candidate-role">{a.jobTitle}</div>
+                      {a.rating > 0 && <div className="recruitment-candidate-rating">⭐ {a.rating}</div>}
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           })}
@@ -66,12 +69,12 @@ export default function Recruitment() {
   ];
 
   return (
-    <div className="page-container">
+    <div className="page-container recruitment-container">
       <div className="page-header">
         <div><h1>Recruitment</h1><p className="page-header-subtitle">Manage job postings and candidates</p></div>
-        <Button icon={HiOutlinePlus}>Post New Job</Button>
+        <Button icon={HiOutlinePlus} className="recruitment-action-btn">Post New Job</Button>
       </div>
-      <div className="grid-3 mb-6">
+      <div className="recruitment-stats-grid mb-6">
         <StatCard label="Open Positions" value={openJobs} icon={HiOutlineBriefcase} color="#3b82f6" />
         <StatCard label="Total Applicants" value={totalApplicants} icon={HiOutlineUsers} color="#8b5cf6" />
         <StatCard label="Hired This Month" value={1} icon={HiOutlineUsers} color="#22c55e" />

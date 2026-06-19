@@ -1,5 +1,5 @@
 export const attendance = [
-  { id: 'att-1', employeeId: 'emp-4', employeeName: 'Emily Thompson', date: '2024-03-11', clockIn: '08:55', clockOut: '17:30', status: 'present', hoursWorked: 8.58, overtime: 0.58, late: false },
+  { id: 'att-1', employeeId: 'emp-4', employeeName: 'Emily Thompson', date: '2024-03-11', clockIn: '09:55', clockOut: '17:30', status: 'present', hoursWorked: 8.58, overtime: 0.58, late: false },
   { id: 'att-2', employeeId: 'emp-6', employeeName: 'Sarah Williams', date: '2024-03-11', clockIn: '09:15', clockOut: '18:00', status: 'present', hoursWorked: 8.75, overtime: 0.75, late: true },
   { id: 'att-3', employeeId: 'emp-7', employeeName: 'Robert Brown', date: '2024-03-11', clockIn: '08:45', clockOut: '17:00', status: 'present', hoursWorked: 8.25, overtime: 0.25, late: false },
   { id: 'att-4', employeeId: 'emp-9', employeeName: 'William Garcia', date: '2024-03-11', clockIn: null, clockOut: null, status: 'absent', hoursWorked: 0, overtime: 0, late: false },

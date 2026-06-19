@@ -1,0 +1,195 @@
+/* ============================================
+   Performance Page — Enhanced Redesign
+   ============================================ */
+
+.performance-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats Grid */
+.performance-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.performance-stat-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.5) 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color-light);
+}
+
+.performance-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-300);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+}
+
+/* Review Table */
+.performance-table-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.performance-table-wrapper:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.performance-review-row {
+  transition: all 0.2s ease;
+}
+
+.performance-review-row:hover {
+  background-color: rgba(59, 130, 246, 0.02);
+}
+
+/* Analytics Section */
+.performance-chart-section {
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.5) 100%);
+  margin-top: var(--space-6);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color-light);
+}
+
+.performance-chart-section:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: var(--color-primary-300);
+}
+
+.performance-chart-header {
+  margin-bottom: var(--space-6);
+}
+
+.performance-chart-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.performance-chart-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Rating Stars */
+.performance-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning-600);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+/* Tab Content */
+.performance-tab-content {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.3) 100%);
+}
+
+/* Actions */
+.performance-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.performance-action-btn {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.performance-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Badge */
+.performance-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Employee Card in Reviews */
+.performance-employee-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.performance-employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.performance-employee-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.performance-employee-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.performance-employee-dept {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .performance-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-chart-section {
+    padding: var(--space-4);
+  }
+}

@@ -1,0 +1,157 @@
+/* ============================================
+   Leave Management Page — Enhanced Redesign
+   ============================================ */
+
+.leave-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats Cards */
+.leave-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.leave-stat-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.5) 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color-light);
+}
+
+.leave-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-300);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+}
+
+.leave-stat-value {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.leave-stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Request Rows Styling */
+.leave-request-row {
+  transition: all 0.2s ease;
+}
+
+.leave-request-row:hover {
+  background-color: rgba(59, 130, 246, 0.02);
+}
+
+.leave-request-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.leave-action-btn {
+  transition: all 0.2s ease;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leave-action-btn:hover {
+  background: var(--color-gray-100);
+  transform: scale(1.05);
+}
+
+.leave-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.leave-balance-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+
+.leave-balance-item {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.5) 100%);
+  border-left: 4px solid var(--color-primary-500);
+  transition: all 0.3s ease;
+}
+
+.leave-balance-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.leave-balance-type {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.leave-balance-count {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.leave-balance-days {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+}
+
+/* Tab Content */
+.leave-tab-content {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .leave-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leave-balance-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .leave-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leave-balance-list {
+    grid-template-columns: 1fr;
+  }
+}

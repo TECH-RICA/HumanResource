@@ -12,6 +12,7 @@ import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
 import Card from '../../components/ui/Card';
 import toast from 'react-hot-toast';
+import './Leave.css';
 
 const statusMap = { approved: 'success', pending: 'warning', rejected: 'danger' };
 
@@ -55,24 +56,22 @@ export default function Leave() {
   ];
 
   return (
-    <div className="page-container">
+    <div className="page-container leave-container">
       <div className="page-header">
         <div><h1>Leave Management</h1><p className="page-header-subtitle">Manage leave requests and balances</p></div>
         <Button icon={HiOutlinePlus} onClick={() => setShowForm(true)}>Apply Leave</Button>
       </div>
 
-      <div className="grid-4 mb-6">
+      <div className="leave-balance-list mb-6">
         {balances.map((b) => (
-          <Card key={b.type}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 'var(--font-size-sm)', color: 'var(--text-secondary)', marginBottom: 4 }}>{b.type} Leave</div>
-              <div style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 700, color: b.color }}>{b.total - b.used}</div>
-              <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-tertiary)' }}>{b.used} used of {b.total}</div>
-              <div style={{ height: 4, background: '#f3f4f6', borderRadius: 2, marginTop: 8 }}>
-                <div style={{ height: '100%', width: `${(b.used / b.total) * 100}%`, background: b.color, borderRadius: 2 }} />
-              </div>
+          <div key={b.type} className="leave-balance-item" style={{ borderLeftColor: b.color }}>
+            <div className="leave-balance-type">{b.type}</div>
+            <div className="leave-balance-count" style={{ color: b.color }}>{b.total - b.used}</div>
+            <div className="leave-balance-days">{b.used} used of {b.total}</div>
+            <div style={{ height: 4, background: 'var(--color-gray-200)', borderRadius: 2, marginTop: 8 }}>
+              <div style={{ height: '100%', width: `${(b.used / b.total) * 100}%`, background: b.color, borderRadius: 2 }} />
             </div>
-          </Card>
+          </div>
         ))}
       </div>
 

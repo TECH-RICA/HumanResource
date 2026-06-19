@@ -16,7 +16,7 @@ export default function Departments() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <div><h1>Departments</h1><p className="page-header-subtitle">{departments.length} departments</p></div>
+        <div><h1>DEPARTMENTS</h1><p className="page-header-subtitle">{departments.length} departments</p></div>
         <Button icon={HiOutlinePlus} onClick={() => setShowForm(true)}>Add Department</Button>
       </div>
       <div className="dept-grid">

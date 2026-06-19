@@ -1,0 +1,213 @@
+/* ============================================
+   Recruitment Page — Enhanced Redesign
+   ============================================ */
+
+.recruitment-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats Grid */
+.recruitment-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+/* Job Postings Table */
+.recruitment-jobs-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.recruitment-jobs-wrapper:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Pipeline View */
+.recruitment-pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.recruitment-pipeline-stage {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gray-50) 0%, rgba(243, 244, 246, 0.5) 100%);
+  padding: var(--space-5);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color-light);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recruitment-pipeline-stage:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  border-color: var(--color-primary-300);
+}
+
+.recruitment-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--border-color-light);
+}
+
+.recruitment-stage-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.recruitment-stage-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.recruitment-candidate-card {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: white;
+  border: 1px solid var(--border-color-light);
+  margin-bottom: var(--space-3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.recruitment-candidate-card:hover {
+  border-color: var(--color-primary-300);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.recruitment-candidate-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.recruitment-candidate-role {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.recruitment-candidate-rating {
+  font-size: var(--font-size-xs);
+  color: var(--color-warning-600);
+  font-weight: 500;
+}
+
+.recruitment-stage-footer {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color-light);
+  text-align: center;
+}
+
+.recruitment-stage-action {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-600);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recruitment-stage-action:hover {
+  color: var(--color-primary-800);
+}
+
+/* Tab Content */
+.recruitment-tab-content {
+  padding: var(--space-6);
+}
+
+/* Actions Bar */
+.recruitment-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.recruitment-action-btn {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.recruitment-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Badge Enhancements */
+.recruitment-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .recruitment-pipeline {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .recruitment-pipeline-stage {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recruitment-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recruitment-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .recruitment-pipeline-stage {
+    min-height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .recruitment-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
