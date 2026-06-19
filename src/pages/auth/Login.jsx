@@ -32,7 +32,18 @@ export default function Login() {
           label="Password" type="password" placeholder="••••••••"
           icon={HiOutlineLockClosed} required
           error={errors.password?.message}
-          {...register('password', { required: 'Password is required', minLength: { value: 6, message: 'Min 6 characters' } })}
+        {...register('password', {
+  required: 'Password is required',
+  minLength: {
+    value: 8,
+    message: 'Password must be at least 8 characters'
+  },
+  pattern: {
+    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
+    message:
+      'Must contain uppercase, lowercase and a number'
+  }
+})}
           onFocus={clearError}
         />
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

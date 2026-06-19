@@ -31,9 +31,18 @@ export default function Register() {
         <Input label="Work Email" type="email" placeholder="you@company.com" icon={HiOutlineMail} required error={errors.email?.message}
           {...reg('email', { required: 'Email is required', pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Invalid email' } })} />
         <Input label="Password" type="password" placeholder="Min 8 characters" icon={HiOutlineLockClosed} required error={errors.password?.message}
-          {...reg('password', { required: 'Password is required', minLength: { value: 8, message: 'Min 8 characters' } })} />
+          {...reg('password', { required: 'Password is required', minLength: { value: 8, message: 'Password must be at least 8 characters'
+  },
+  pattern: {
+    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
+    message:
+      'Must contain uppercase, lowercase and a number' } })} />
         <Input label="Confirm Password" type="password" placeholder="Re-enter password" icon={HiOutlineLockClosed} required error={errors.confirmPassword?.message}
-          {...reg('confirmPassword', { required: 'Please confirm', validate: (v) => v === watch('password') || 'Passwords do not match' })} />
+ {...reg('confirmPassword', {
+  required: 'Please confirm your password',
+  validate: (value) =>
+    value === watch('password') || 'Passwords do not match'
+})}  />
         <Button type="submit" loading={isLoading} style={{ width: '100%', marginTop: 'var(--space-2)' }}>Create Account</Button>
       </form>
       <div className="auth-footer">
